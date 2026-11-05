@@ -8,7 +8,7 @@
 <style>
 :root { --navy: #16245C; --teal: #0B7A83; --teal-dark: #085E66; --gold: #F5B83D; --ink: #1B2340; --muted: #565F7C; --line: #DDE2F0; --bg: #F3F5FC; }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+body { display: flex; flex-direction: column; min-height: 100vh; margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; margin: 0 0 .5em; }
 p { margin: 0 0 1em; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
@@ -18,9 +18,9 @@ header span::before { content: ""; display: inline-block; width: 10px; height: 1
 .hero { color: #fff; background: linear-gradient(115deg, #16245C 0%, #2D3A8C 48%, #0B7A83 100%); padding: 40px 0 36px; }
 .hero h1 { font-size: 2.4rem; }
 .hero p { font-size: 1.1rem; margin: 0; max-width: 36em; }
-main { padding: 28px 16px 48px; }
+main.wrap { flex: 1 0 auto; width: 100%; padding-top: 28px; padding-bottom: 48px; }
 main h2 { color: var(--navy); font-size: 1.3rem; }
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
 .book { display: flex; flex-direction: column; background: #fff; color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-top: 5px solid var(--teal); border-radius: 14px; padding: 20px; box-shadow: 0 2px 6px rgba(22,36,92,.06), 0 10px 26px rgba(22,36,92,.08); transition: transform .15s ease; }
 .book:hover { transform: translateY(-3px); }
 .book h3 { color: var(--navy); font-family: Georgia, serif; font-size: 1.25rem; line-height: 1.25; margin: 0 0 8px; }
