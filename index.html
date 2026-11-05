@@ -7,9 +7,12 @@
 <meta name="description" content="Online practice exam, flashcards, and printable study tools for readers of NCE Exam Prep 2026–2027. No sign-up needed.">
 <style>
 :root {
-  --navy: #1F3864; --teal: #1F7A8C; --teal-dark: #17606F; --ink: #1E2733; --muted: #5A6675;
-  --line: #D9E0E8; --bg: #F5F7FA; --card: #FFFFFF; --tint: #E8F3F5;
-  --good: #1E7B4F; --good-bg: #E5F4EC; --bad: #B3362B; --bad-bg: #FBEAE8; --warn: #9A6200; --warn-bg: #FDF3DF;
+  --navy: #16245C; --indigo: #2D3A8C; --teal: #0B7A83; --teal-dark: #085E66; --teal-bright: #12B5B0;
+  --coral: #D1431F; --violet: #5B46D6; --gold: #F5B83D; --gold-dark: #8F5E00;
+  --ink: #1B2340; --muted: #565F7C; --line: #DDE2F0; --bg: #F3F5FC; --card: #FFFFFF; --tint: #E3F5F5;
+  --good: #14784A; --good-bg: #E2F5EA; --bad: #B8321C; --bad-bg: #FDEAE5; --warn: #8F5E00; --warn-bg: #FEF3D6;
+  --shadow: 0 2px 6px rgba(22,36,92,.06), 0 10px 26px rgba(22,36,92,.08);
+  --accent: var(--teal);
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -19,24 +22,51 @@ h1 { font-size: 2rem; } h2 { font-size: 1.45rem; } h3 { font-size: 1.15rem; }
 p { margin: 0 0 1em; }
 a { color: var(--teal-dark); }
 button { font: inherit; cursor: pointer; }
-:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
-.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
 header.site { background: var(--navy); color: #fff; }
 header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding-top: 12px; padding-bottom: 12px; }
 .brand { color: #fff; font-family: Georgia, serif; font-weight: bold; font-size: 1.1rem; text-decoration: none; }
-nav.main a { color: #DCE6F2; text-decoration: none; padding: 6px 8px; border-radius: 6px; font-size: .95rem; }
-nav.main a[aria-current="page"] { background: rgba(255,255,255,.16); color: #fff; }
-main.wrap { padding-top: 26px; padding-bottom: 44px; outline: none; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
-.hero { padding: 6px 0 16px; }
-.hero p { color: var(--muted); font-size: 1.08rem; max-width: 42em; }
-.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.tool { display: flex; flex-direction: column; }
+.brand::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 3px; background: var(--gold); transform: rotate(45deg) translateY(-2px); }
+nav.main a { color: #E4E9FA; text-decoration: none; padding: 6px 9px; border-radius: 7px; font-size: .95rem; }
+nav.main a:hover { background: rgba(255,255,255,.12); }
+nav.main a[aria-current="page"] { background: var(--gold); color: var(--navy); font-weight: 600; }
+
+.hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(115deg, #16245C 0%, #2D3A8C 48%, #0B7A83 100%); }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+.hero::before { width: 420px; height: 420px; right: -120px; top: -170px; background: rgba(18,181,176,.28); }
+.hero::after { width: 240px; height: 240px; right: 200px; bottom: -150px; background: rgba(245,184,61,.2); }
+.hero .wrap { position: relative; z-index: 1; padding-top: 44px; padding-bottom: 40px; }
+.eyebrow { color: var(--gold); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .82rem; margin-bottom: 10px; }
+.hero h1 { color: #fff; font-size: 2.6rem; margin-bottom: 12px; }
+.lead { color: #fff; font-size: 1.12rem; max-width: 36em; margin-bottom: 22px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 26px 0 0; padding: 0; }
+.facts li { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 10px; padding: 7px 14px; font-size: .92rem; }
+.facts b { color: #fff; font-size: 1.1rem; margin-right: 3px; }
+
+main.wrap { padding-top: 28px; padding-bottom: 48px; outline: none; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.tool { display: flex; flex-direction: column; border-top: 5px solid var(--accent); margin-bottom: 0; transition: transform .15s ease, box-shadow .15s ease; }
+.tool:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(22,36,92,.08), 0 16px 34px rgba(22,36,92,.14); }
 .tool p { color: var(--muted); flex: 1; }
-.btn { display: inline-block; background: var(--teal); color: #fff; border: 1px solid var(--teal); border-radius: 8px; padding: 10px 18px; text-decoration: none; font-weight: 600; text-align: center; }
+.tool .btn { background: var(--accent); border-color: var(--accent); }
+.tool .btn:hover { filter: brightness(.9); }
+.a-teal { --accent: var(--teal); --soft: #DDF3F3; }
+.a-violet { --accent: var(--violet); --soft: #E9E6FB; }
+.a-coral { --accent: var(--coral); --soft: #FCE7E0; }
+.icon { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 12px; background: var(--soft); color: var(--accent); margin-bottom: 12px; }
+.icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+.btn { display: inline-block; background: var(--teal); color: #fff; border: 1.5px solid var(--teal); border-radius: 9px; padding: 10px 18px; text-decoration: none; font-weight: 600; text-align: center; }
 .btn:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
 .btn.alt { background: #fff; color: var(--teal-dark); }
 .btn.alt:hover { background: var(--tint); }
+.btn.hot { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.btn.hot:hover { background: #FFCB5C; border-color: #FFCB5C; }
+.btn.ghost { background: transparent; border-color: #fff; color: #fff; }
+.btn.ghost:hover { background: rgba(255,255,255,.14); border-color: #fff; }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
 .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .between { justify-content: space-between; }
@@ -45,33 +75,43 @@ main.wrap { padding-top: 26px; padding-bottom: 44px; outline: none; }
 .check { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 16px; }
 .check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--teal); }
 
-.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 0; margin-bottom: 8px; border-bottom: 1px solid var(--line); }
-.timer { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--navy); }
-.timer.low { color: var(--bad); }
-.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-top: 8px; }
-.progress span { display: block; height: 100%; background: var(--teal); }
+.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 0; margin-bottom: 10px; }
+.timer { font-variant-numeric: tabular-nums; font-weight: 700; color: #fff; background: var(--navy); border-radius: 18px; padding: 2px 13px; }
+.timer.low { background: var(--coral); }
+.progress { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-bright)); }
 .stem { font-size: 1.1rem; margin-bottom: 16px; }
-.opt { display: flex; gap: 12px; width: 100%; text-align: left; background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
-.opt:hover { border-color: var(--teal); }
-.opt[aria-pressed="true"] { border-color: var(--teal); background: var(--tint); }
-.opt b { color: var(--navy); }
+.opt { display: flex; gap: 12px; width: 100%; text-align: left; background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; transition: border-color .12s ease, background .12s ease; }
+.opt:hover { border-color: var(--teal); background: #F6FCFC; }
+.opt[aria-pressed="true"] { border-color: var(--teal); background: var(--tint); box-shadow: inset 4px 0 0 var(--teal); }
+.opt b { display: inline-grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: .88rem; }
+.opt[aria-pressed="true"] b { background: var(--teal); }
 .qgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 6px; }
-.qgrid button { height: 40px; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 0; font-size: .9rem; }
-.qgrid button.done { background: var(--tint); border-color: var(--teal); }
-.qgrid button.flag { box-shadow: inset 0 -4px 0 var(--warn); }
-.qgrid button.now { outline: 2px solid var(--navy); }
+.qgrid button { height: 40px; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 0; font-size: .9rem; }
+.qgrid button.done { background: var(--teal); border-color: var(--teal); color: #fff; }
+.qgrid button.flag { box-shadow: inset 0 -5px 0 var(--gold); }
+.qgrid button.now { outline: 2px solid var(--navy); outline-offset: 1px; }
 .legend { margin-top: 10px; }
 
-.score { font-family: Georgia, serif; font-size: 3rem; color: var(--navy); line-height: 1; margin: 0 0 6px; }
+.scorecard { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: linear-gradient(115deg, #16245C, #2D3A8C 55%, #0B7A83); border: 0; color: #fff; }
+.scorecard .muted { color: #fff; }
+.scorecard p:last-child { margin-bottom: 0; }
+.scoretext { flex: 1 1 260px; }
+.ring { display: grid; place-items: center; flex: none; width: 124px; height: 124px; border-radius: 50%; background: conic-gradient(var(--gold) calc(var(--p) * 1%), rgba(255,255,255,.22) 0); }
+.ring span { display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; background: var(--navy); color: #fff; font-family: Georgia, serif; font-size: 1.6rem; font-weight: bold; }
+.score { font-family: Georgia, serif; font-size: 2.6rem; color: #fff; line-height: 1; margin: 0 0 6px; }
 table.dom { width: 100%; border-collapse: collapse; }
 table.dom th, table.dom td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
 table.dom th.num, table.dom td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.mini { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 5px; }
+.mini { height: 9px; background: var(--line); border-radius: 5px; overflow: hidden; margin-top: 5px; }
 .mini span { display: block; height: 100%; background: var(--teal); }
-.rev { border-left: 4px solid var(--line); }
+.mini span.hi { background: #1F9D62; }
+.mini span.mid { background: var(--gold); }
+.mini span.lo { background: var(--coral); }
+.rev { border-left: 5px solid var(--line); }
 .rev.right { border-left-color: var(--good); }
 .rev.wrong { border-left-color: var(--bad); }
-.ro { padding: 7px 10px; border-radius: 6px; margin-bottom: 6px; }
+.ro { padding: 7px 10px; border-radius: 8px; margin-bottom: 6px; }
 .ro.correct { background: var(--good-bg); }
 .ro.picked { background: var(--bad-bg); }
 .tag { display: inline-block; font-size: .78rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; margin-left: 4px; }
@@ -81,23 +121,38 @@ table.dom th.num, table.dom td.num { text-align: right; white-space: nowrap; fon
 .seg { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .seg button { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 5px 13px; color: var(--ink); font-size: .92rem; }
 .seg button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.reviewbox { background: #FFF9EA; border-color: #F4DFAE; }
 
-.flash { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; min-height: 240px; text-align: center; background: var(--card); color: var(--ink); border: 1.5px solid var(--line); border-radius: 12px; padding: 24px 20px; margin-bottom: 14px; }
-.flash.front { background: var(--tint); border-color: var(--teal); }
-.flash .big { font-family: Georgia, serif; font-size: 1.45rem; color: var(--navy); }
+.deck { border-left: 6px solid var(--accent); }
+.deck .btn { background: var(--accent); border-color: var(--accent); }
+.deck .btn:hover { filter: brightness(.9); }
+.deckbar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 10px; }
+.deckbar span { display: block; height: 100%; background: var(--accent); }
+.flash { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; min-height: 250px; text-align: center; background: var(--card); color: var(--ink); border: 2px solid var(--teal); border-radius: 16px; padding: 24px 20px; margin-bottom: 14px; box-shadow: var(--shadow); font-size: 1.1rem; }
+.flash.front { background: linear-gradient(125deg, #16245C, #2D3A8C 55%, #0B7A83); border-color: transparent; color: #fff; }
+.flash .big { font-family: Georgia, serif; font-size: 1.6rem; color: #fff; }
 .flash .hint { margin-top: 14px; color: var(--muted); font-size: .85rem; }
+.flash.front .hint { color: #fff; }
 .rate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.rate button { padding: 10px 4px; border-radius: 8px; font-weight: 600; background: #fff; }
-.rate .r0 { color: var(--bad); border: 1.5px solid var(--bad); }
-.rate .r1 { color: var(--warn); border: 1.5px solid var(--warn); }
-.rate .r2 { color: var(--good); border: 1.5px solid var(--good); }
+.rate button { padding: 10px 4px; border-radius: 9px; font-weight: 600; color: #fff; border: 0; }
+.rate .r0 { background: var(--coral); }
+.rate .r1 { background: var(--gold); color: var(--navy); }
+.rate .r2 { background: var(--good); }
+.rate button:hover { filter: brightness(.92); }
 .stats { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 12px 0 0; font-size: .92rem; color: var(--muted); }
 
-.dl { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
-.dl > div { flex: 1 1 280px; }
-footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--muted); font-size: .85rem; }
-@media (max-width: 520px) { h1 { font-size: 1.65rem; } .card { padding: 16px; } .score { font-size: 2.5rem; } }
-@media print { header.site, nav.main, .bar, footer { display: none; } }
+.dl { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }
+.dl .icon { margin-bottom: 0; }
+.dl > div:nth-child(2) { flex: 1 1 260px; }
+.dl .btn { background: var(--accent); border-color: var(--accent); }
+.dl .btn:hover { filter: brightness(.9); }
+footer { background: var(--navy); color: #E4E9FA; padding: 24px 0 30px; font-size: .85rem; }
+@media (max-width: 520px) {
+  h1 { font-size: 1.65rem; } .hero h1 { font-size: 2rem; } .card { padding: 16px; } .hero .wrap { padding-top: 32px; padding-bottom: 30px; }
+  .hero .btn { width: 100%; } .score { font-size: 2.2rem; } .hero::before, .hero::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print { header.site, nav.main, .bar, footer, #banner { display: none; } }
 </style>
 </head>
 <body>
@@ -112,6 +167,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
     </nav>
   </div>
 </header>
+<div id="banner"></div>
 <main class="wrap" id="app" tabindex="-1"></main>
 <footer>
   <div class="wrap">
@@ -131,7 +187,15 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
   var D = window.NCE_DATA;
   var Q = D.questions;
   var app = document.getElementById('app');
+  var banner = document.getElementById('banner');
   var tick = null;
+  var ICON = {
+    exam: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 13l2.2 2.2L15.5 10"/></svg>',
+    cards: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="14" height="13" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v10"/></svg>',
+    print: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/></svg>',
+    doc: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>'
+  };
+  var TONES = ['a-teal', 'a-violet', 'a-coral'];
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -145,8 +209,9 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
     s = Math.max(0, Math.round(s));
     return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
   }
-  function show(html, active) {
+  function show(html, active, top) {
     clearInterval(tick);
+    banner.innerHTML = top || '';
     app.innerHTML = html;
     document.querySelectorAll('[data-nav]').forEach(function (a) {
       if (a.getAttribute('data-nav') === active) a.setAttribute('aria-current', 'page');
@@ -157,14 +222,19 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
 
   // ---------- home
   function home() {
+    function tool(tone, icon, name, text, link, label) {
+      return '<div class="card tool ' + tone + '"><div class="icon">' + ICON[icon] + '</div><h2>' + name + '</h2><p>' + text + '</p><a class="btn" href="' + link + '">' + label + '</a></div>';
+    }
     show(
-      '<section class="hero"><h1>NCE Study Tools</h1>' +
-      '<p>Extra practice for readers of <em>' + BOOK + '</em>. Everything here is ready to use, with no account and no sign-up.</p></section>' +
       '<div class="grid">' +
-      '<div class="card tool"><h2>Practice Exam</h2><p>50 new questions in the 2027 three-option format, with an optional 66-minute timer, a score by domain, and a rationale for every answer.</p><a class="btn" href="#/exam">Open the exam</a></div>' +
-      '<div class="card tool"><h2>Flashcards</h2><p>168 cards on key terms, theorists, and statistics. Sort each card into Not yet, Almost, or Know it as you go.</p><a class="btn" href="#/flashcards">Study flashcards</a></div>' +
-      '<div class="card tool"><h2>Printables</h2><p>The practice exam, cheat sheets, study planner, and cut-and-fold flashcards as PDF files to print or save.</p><a class="btn" href="#/downloads">See printables</a></div>' +
-      '</div>', 'home');
+      tool('a-teal', 'exam', 'Practice Exam', '50 new questions in the 2027 three-option format, with an optional 66-minute timer, a score by domain, and a rationale for every answer.', '#/exam', 'Open the exam') +
+      tool('a-violet', 'cards', 'Flashcards', '168 cards on key terms, theorists, and statistics. Sort each card into Not yet, Almost, or Know it as you go.', '#/flashcards', 'Study flashcards') +
+      tool('a-coral', 'print', 'Printables', 'The practice exam, cheat sheets, study planner, and cut-and-fold flashcards as PDF files to print or save.', '#/downloads', 'See printables') +
+      '</div>', 'home',
+      '<section class="hero"><div class="wrap"><p class="eyebrow">NCE Study Tools</p><h1>Practice smarter for the NCE</h1>' +
+      '<p class="lead">Extra practice for readers of <em>' + BOOK + '</em>. Everything here is ready to use, with no account and no sign-up.</p>' +
+      '<div class="row"><a class="btn hot" href="#/exam">Start the practice exam</a><a class="btn ghost" href="#/flashcards">Study flashcards</a></div>' +
+      '<ul class="facts"><li><b>50</b> practice questions</li><li><b>168</b> flashcards</li><li><b>6</b> exam domains</li><li><b>4</b> printables</li></ul></div></section>');
   }
 
   // ---------- exam
@@ -268,7 +338,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
     var link = REVIEW_URL
       ? '<a class="btn alt" href="' + esc(REVIEW_URL) + '" target="_blank" rel="noopener">Write a review on Amazon</a>'
       : '<p class="small muted" style="margin:0">To leave a review, search for <em>' + BOOK + '</em> on Amazon.</p>';
-    return '<div class="card"><h3>Has the book helped you?</h3><p>If you have a moment, an honest review on Amazon helps other counseling graduates decide whether this book fits how they study. Please share your real opinion, whatever it is. These tools stay open to you either way.</p>' + link + '</div>';
+    return '<div class="card reviewbox"><h3>Has the book helped you?</h3><p>If you have a moment, an honest review on Amazon helps other counseling graduates decide whether this book fits how they study. Please share your real opinion, whatever it is. These tools stay open to you either way.</p>' + link + '</div>';
   }
   function results(s) {
     var filter = 'all';
@@ -280,7 +350,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
         var qs = Q.filter(function (q) { return q.domain === +d; });
         var r = qs.filter(correct).length;
         var p = Math.round(r / qs.length * 100);
-        return '<tr><td>' + esc(d + '. ' + D.domains[d]) + '<div class="mini"><span style="width:' + p + '%"></span></div></td><td class="num">' + r + ' / ' + qs.length + '</td><td class="num">' + p + '%</td></tr>';
+        return '<tr><td>' + esc(d + '. ' + D.domains[d]) + '<div class="mini"><span class="' + (p >= 80 ? 'hi' : p >= 60 ? 'mid' : 'lo') + '" style="width:' + p + '%"></span></div></td><td class="num">' + r + ' / ' + qs.length + '</td><td class="num">' + p + '%</td></tr>';
       }).join('');
       var list = Q.filter(function (q) {
         if (filter === 'missed') return !correct(q);
@@ -300,8 +370,8 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
       show(
         '<h1>Your Results</h1>' +
         (s.timeUp ? '<p class="muted">Time ran out, so your exam was scored with the answers you had chosen.</p>' : '') +
-        '<div class="card"><p class="score">' + right + ' / ' + Q.length + '</p><p class="muted">' + pct + '% correct' + (s.timed ? ' · Time used ' + clock(Math.min(s.used, EXAM_SECONDS)) : '') + '</p>' +
-        '<p class="small muted">A practice percentage is not a scaled score, and no practice exam can predict your official result. Use this to compare your domains and track your progress.</p></div>' +
+        '<div class="card scorecard"><div class="ring" style="--p:' + pct + '"><span>' + pct + '%</span></div><div class="scoretext"><p class="score">' + right + ' / ' + Q.length + '</p><p class="muted">' + pct + '% correct' + (s.timed ? ' · Time used ' + clock(Math.min(s.used, EXAM_SECONDS)) : '') + '</p>' +
+        '<p class="small muted">A practice percentage is not a scaled score, and no practice exam can predict your official result. Use this to compare your domains and track your progress.</p></div></div>' +
         '<div class="card"><h2>Score by Domain</h2><table class="dom"><thead><tr><th>Domain</th><th class="num">Correct</th><th class="num">Percent</th></tr></thead><tbody>' + rows + '</tbody></table>' +
         '<p class="small muted" style="margin:12px 0 0">Return to the matching chapters for your two lowest domains. Add every miss and every correct guess to your weak-spot tracker.</p></div>' +
         reviewBox() +
@@ -324,9 +394,9 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
     }
     function pick() {
       var rows = D.decks.map(function (dk, d) {
-        return '<div class="card"><div class="row between"><div><h2 style="margin-bottom:4px">' + esc(dk.name) + '</h2>' +
+        return '<div class="card deck ' + TONES[d % 3] + '"><div class="row between"><div><h2 style="margin-bottom:4px">' + esc(dk.name) + '</h2>' +
           '<div class="stats" style="margin:0"><span>' + dk.cards.length + ' cards</span><span>Know it: ' + count(d, 2) + '</span><span>Almost: ' + count(d, 1) + '</span><span>Not yet: ' + count(d, 0) + '</span></div></div>' +
-          '<button class="btn" data-d="' + d + '">Study</button></div></div>';
+          '<button class="btn" data-d="' + d + '">Study</button></div><div class="deckbar"><span style="width:' + (count(d, 2) / dk.cards.length * 100) + '%"></span></div></div>';
       }).join('');
       show('<h1>Flashcards</h1><p class="muted">Answer out loud before you flip. A vague "I sort of know this" counts as Not yet.</p>' + rows, 'flashcards');
       on('[data-d]', function () { study(+this.getAttribute('data-d')); });
@@ -393,8 +463,8 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 30px; color: var(--m
       ['Study Planner and Test-Day Kit', 'The 12-, 8-, and 4-week schedules, weak-spot tracker pages, weekly planners, a seven-day countdown, and test-day checklists.', 'NCE_Bonus_3_Printable_Study_Planner.pdf'],
       ['168 Printable Flashcards', 'Cut-and-fold cards for key terms, theorists, and statistics.', 'NCE_Bonus_4_Printable_Flashcards.pdf']
     ];
-    show('<h1>Printables</h1><p class="muted">PDF files to print or save for your personal study.</p>' + items.map(function (x) {
-      return '<div class="card dl"><div><h2 style="margin-bottom:4px">' + esc(x[0]) + '</h2><p class="muted" style="margin:0">' + esc(x[1]) + '</p></div><a class="btn" href="files/' + x[2] + '" download>Download PDF</a></div>';
+    show('<h1>Printables</h1><p class="muted">PDF files to print or save for your personal study.</p>' + items.map(function (x, k) {
+      return '<div class="card dl ' + ['a-teal', 'a-coral', 'a-violet', 'a-teal'][k] + '"><div class="icon">' + ICON[k === 3 ? 'cards' : 'doc'] + '</div><div><h2 style="margin-bottom:4px">' + esc(x[0]) + '</h2><p class="muted" style="margin:0">' + esc(x[1]) + '</p></div><a class="btn" href="files/' + x[2] + '" download>Download PDF</a></div>';
     }).join(''), 'downloads');
   }
 
