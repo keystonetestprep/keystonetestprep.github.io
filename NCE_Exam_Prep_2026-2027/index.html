@@ -122,6 +122,7 @@ table.dom th.num, table.dom td.num { text-align: right; white-space: nowrap; fon
 .seg button { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 5px 13px; color: var(--ink); font-size: .92rem; }
 .seg button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
 .reviewbox { background: #FFF9EA; border-color: #F4DFAE; }
+.grid + .reviewbox { margin-top: 18px; }
 
 .deck { border-left: 6px solid var(--accent); }
 .deck .btn { background: var(--accent); border-color: var(--accent); }
@@ -230,7 +231,7 @@ footer { background: var(--navy); color: #E4E9FA; padding: 24px 0 30px; font-siz
       tool('a-teal', 'exam', 'Practice Exam', '50 new questions in the 2027 three-option format, with an optional 66-minute timer, a score by domain, and a rationale for every answer.', '#/exam', 'Open the exam') +
       tool('a-violet', 'cards', 'Flashcards', '168 cards on key terms, theorists, and statistics. Sort each card into Not yet, Almost, or Know it as you go.', '#/flashcards', 'Study flashcards') +
       tool('a-coral', 'print', 'Printables', 'The practice exam, cheat sheets, study planner, and cut-and-fold flashcards as PDF files to print or save.', '#/downloads', 'See printables') +
-      '</div>', 'home',
+      '</div>' + reviewBox(), 'home',
       '<section class="hero"><div class="wrap"><p class="eyebrow">NCE Study Tools</p><h1>Practice smarter for the NCE</h1>' +
       '<p class="lead">Extra practice for readers of <em>' + BOOK + '</em>. Everything here is ready to use, with no account and no sign-up.</p>' +
       '<div class="row"><a class="btn hot" href="#/exam">Start the practice exam</a><a class="btn ghost" href="#/flashcards">Study flashcards</a></div>' +
