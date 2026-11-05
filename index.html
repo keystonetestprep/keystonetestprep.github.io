@@ -3,483 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NCE Study Tools | Keystone Test Prep</title>
-<meta name="description" content="Online practice exam, flashcards, and printable study tools for readers of NCE Exam Prep 2026–2027. No sign-up needed.">
+<title>Study Tools | Keystone Test Prep</title>
+<meta name="description" content="Online practice exams, flashcards, and printable study tools for readers of Keystone Test Prep study guides. No sign-up needed.">
 <style>
-:root {
-  --navy: #16245C; --indigo: #2D3A8C; --teal: #0B7A83; --teal-dark: #085E66; --teal-bright: #12B5B0;
-  --coral: #D1431F; --violet: #5B46D6; --gold: #F5B83D; --gold-dark: #8F5E00;
-  --ink: #1B2340; --muted: #565F7C; --line: #DDE2F0; --bg: #F3F5FC; --card: #FFFFFF; --tint: #E3F5F5;
-  --good: #14784A; --good-bg: #E2F5EA; --bad: #B8321C; --bad-bg: #FDEAE5; --warn: #8F5E00; --warn-bg: #FEF3D6;
-  --shadow: 0 2px 6px rgba(22,36,92,.06), 0 10px 26px rgba(22,36,92,.08);
-  --accent: var(--teal);
-}
+:root { --navy: #16245C; --teal: #0B7A83; --teal-dark: #085E66; --gold: #F5B83D; --ink: #1B2340; --muted: #565F7C; --line: #DDE2F0; --bg: #F3F5FC; }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-h1, h2, h3 { color: var(--navy); font-family: Georgia, "Times New Roman", serif; line-height: 1.2; margin: 0 0 .5em; }
-h1 { font-size: 2rem; } h2 { font-size: 1.45rem; } h3 { font-size: 1.15rem; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; margin: 0 0 .5em; }
 p { margin: 0 0 1em; }
-a { color: var(--teal-dark); }
-button { font: inherit; cursor: pointer; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-
-header.site { background: var(--navy); color: #fff; }
-header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding-top: 12px; padding-bottom: 12px; }
-.brand { color: #fff; font-family: Georgia, serif; font-weight: bold; font-size: 1.1rem; text-decoration: none; }
-.brand::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 3px; background: var(--gold); transform: rotate(45deg) translateY(-2px); }
-nav.main a { color: #E4E9FA; text-decoration: none; padding: 6px 9px; border-radius: 7px; font-size: .95rem; }
-nav.main a:hover { background: rgba(255,255,255,.12); }
-nav.main a[aria-current="page"] { background: var(--gold); color: var(--navy); font-weight: 600; }
-
-.hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(115deg, #16245C 0%, #2D3A8C 48%, #0B7A83 100%); }
-.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
-.hero::before { width: 420px; height: 420px; right: -120px; top: -170px; background: rgba(18,181,176,.28); }
-.hero::after { width: 240px; height: 240px; right: 200px; bottom: -150px; background: rgba(245,184,61,.2); }
-.hero .wrap { position: relative; z-index: 1; padding-top: 44px; padding-bottom: 40px; }
-.eyebrow { color: var(--gold); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .82rem; margin-bottom: 10px; }
-.hero h1 { color: #fff; font-size: 2.6rem; margin-bottom: 12px; }
-.lead { color: #fff; font-size: 1.12rem; max-width: 36em; margin-bottom: 22px; }
-.facts { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 26px 0 0; padding: 0; }
-.facts li { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 10px; padding: 7px 14px; font-size: .92rem; }
-.facts b { color: #fff; font-size: 1.1rem; margin-right: 3px; }
-
-main.wrap { padding-top: 28px; padding-bottom: 48px; outline: none; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.tool { display: flex; flex-direction: column; border-top: 5px solid var(--accent); margin-bottom: 0; transition: transform .15s ease, box-shadow .15s ease; }
-.tool:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(22,36,92,.08), 0 16px 34px rgba(22,36,92,.14); }
-.tool p { color: var(--muted); flex: 1; }
-.tool .btn { background: var(--accent); border-color: var(--accent); }
-.tool .btn:hover { filter: brightness(.9); }
-.a-teal { --accent: var(--teal); --soft: #DDF3F3; }
-.a-violet { --accent: var(--violet); --soft: #E9E6FB; }
-.a-coral { --accent: var(--coral); --soft: #FCE7E0; }
-.icon { display: grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 12px; background: var(--soft); color: var(--accent); margin-bottom: 12px; }
-.icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-
-.btn { display: inline-block; background: var(--teal); color: #fff; border: 1.5px solid var(--teal); border-radius: 9px; padding: 10px 18px; text-decoration: none; font-weight: 600; text-align: center; }
-.btn:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
-.btn.alt { background: #fff; color: var(--teal-dark); }
-.btn.alt:hover { background: var(--tint); }
-.btn.hot { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-.btn.hot:hover { background: #FFCB5C; border-color: #FFCB5C; }
-.btn.ghost { background: transparent; border-color: #fff; color: #fff; }
-.btn.ghost:hover { background: rgba(255,255,255,.14); border-color: #fff; }
-.btn:disabled { opacity: .45; cursor: not-allowed; }
-.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.between { justify-content: space-between; }
-.muted { color: var(--muted); }
-.small { font-size: .9rem; }
-.check { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 16px; }
-.check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--teal); }
-
-.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 0; margin-bottom: 10px; }
-.timer { font-variant-numeric: tabular-nums; font-weight: 700; color: #fff; background: var(--navy); border-radius: 18px; padding: 2px 13px; }
-.timer.low { background: var(--coral); }
-.progress { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 8px; }
-.progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal), var(--teal-bright)); }
-.stem { font-size: 1.1rem; margin-bottom: 16px; }
-.opt { display: flex; gap: 12px; width: 100%; text-align: left; background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; transition: border-color .12s ease, background .12s ease; }
-.opt:hover { border-color: var(--teal); background: #F6FCFC; }
-.opt[aria-pressed="true"] { border-color: var(--teal); background: var(--tint); box-shadow: inset 4px 0 0 var(--teal); }
-.opt b { display: inline-grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: .88rem; }
-.opt[aria-pressed="true"] b { background: var(--teal); }
-.qgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 6px; }
-.qgrid button { height: 40px; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 0; font-size: .9rem; }
-.qgrid button.done { background: var(--teal); border-color: var(--teal); color: #fff; }
-.qgrid button.flag { box-shadow: inset 0 -5px 0 var(--gold); }
-.qgrid button.now { outline: 2px solid var(--navy); outline-offset: 1px; }
-.legend { margin-top: 10px; }
-
-.scorecard { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: linear-gradient(115deg, #16245C, #2D3A8C 55%, #0B7A83); border: 0; color: #fff; }
-.scorecard .muted { color: #fff; }
-.scorecard p:last-child { margin-bottom: 0; }
-.scoretext { flex: 1 1 260px; }
-.ring { display: grid; place-items: center; flex: none; width: 124px; height: 124px; border-radius: 50%; background: conic-gradient(var(--gold) calc(var(--p) * 1%), rgba(255,255,255,.22) 0); }
-.ring span { display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; background: var(--navy); color: #fff; font-family: Georgia, serif; font-size: 1.6rem; font-weight: bold; }
-.score { font-family: Georgia, serif; font-size: 2.6rem; color: #fff; line-height: 1; margin: 0 0 6px; }
-table.dom { width: 100%; border-collapse: collapse; }
-table.dom th, table.dom td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
-table.dom th.num, table.dom td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.mini { height: 9px; background: var(--line); border-radius: 5px; overflow: hidden; margin-top: 5px; }
-.mini span { display: block; height: 100%; background: var(--teal); }
-.mini span.hi { background: #1F9D62; }
-.mini span.mid { background: var(--gold); }
-.mini span.lo { background: var(--coral); }
-.rev { border-left: 5px solid var(--line); }
-.rev.right { border-left-color: var(--good); }
-.rev.wrong { border-left-color: var(--bad); }
-.ro { padding: 7px 10px; border-radius: 8px; margin-bottom: 6px; }
-.ro.correct { background: var(--good-bg); }
-.ro.picked { background: var(--bad-bg); }
-.tag { display: inline-block; font-size: .78rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; margin-left: 4px; }
-.tag.good { background: var(--good); color: #fff; }
-.tag.bad { background: var(--bad); color: #fff; }
-.tag.warn { background: var(--warn-bg); color: var(--warn); }
-.seg { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-.seg button { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 5px 13px; color: var(--ink); font-size: .92rem; }
-.seg button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
-.reviewbox { background: #FFF9EA; border-color: #F4DFAE; }
-
-.deck { border-left: 6px solid var(--accent); }
-.deck .btn { background: var(--accent); border-color: var(--accent); }
-.deck .btn:hover { filter: brightness(.9); }
-.deckbar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 10px; }
-.deckbar span { display: block; height: 100%; background: var(--accent); }
-.flash { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; min-height: 250px; text-align: center; background: var(--card); color: var(--ink); border: 2px solid var(--teal); border-radius: 16px; padding: 24px 20px; margin-bottom: 14px; box-shadow: var(--shadow); font-size: 1.1rem; }
-.flash.front { background: linear-gradient(125deg, #16245C, #2D3A8C 55%, #0B7A83); border-color: transparent; color: #fff; }
-.flash .big { font-family: Georgia, serif; font-size: 1.6rem; color: #fff; }
-.flash .hint { margin-top: 14px; color: var(--muted); font-size: .85rem; }
-.flash.front .hint { color: #fff; }
-.rate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.rate button { padding: 10px 4px; border-radius: 9px; font-weight: 600; color: #fff; border: 0; }
-.rate .r0 { background: var(--coral); }
-.rate .r1 { background: var(--gold); color: var(--navy); }
-.rate .r2 { background: var(--good); }
-.rate button:hover { filter: brightness(.92); }
-.stats { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 12px 0 0; font-size: .92rem; color: var(--muted); }
-
-.dl { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }
-.dl .icon { margin-bottom: 0; }
-.dl > div:nth-child(2) { flex: 1 1 260px; }
-.dl .btn { background: var(--accent); border-color: var(--accent); }
-.dl .btn:hover { filter: brightness(.9); }
+header { background: var(--navy); color: #fff; padding: 12px 0; font-family: Georgia, serif; font-weight: bold; font-size: 1.1rem; }
+header span::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 3px; background: var(--gold); transform: rotate(45deg) translateY(-2px); }
+.hero { color: #fff; background: linear-gradient(115deg, #16245C 0%, #2D3A8C 48%, #0B7A83 100%); padding: 40px 0 36px; }
+.hero h1 { font-size: 2.4rem; }
+.hero p { font-size: 1.1rem; margin: 0; max-width: 36em; }
+main { padding: 28px 16px 48px; }
+main h2 { color: var(--navy); font-size: 1.3rem; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.book { display: flex; flex-direction: column; background: #fff; color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-top: 5px solid var(--teal); border-radius: 14px; padding: 20px; box-shadow: 0 2px 6px rgba(22,36,92,.06), 0 10px 26px rgba(22,36,92,.08); transition: transform .15s ease; }
+.book:hover { transform: translateY(-3px); }
+.book h3 { color: var(--navy); font-family: Georgia, serif; font-size: 1.25rem; line-height: 1.25; margin: 0 0 8px; }
+.book p { color: var(--muted); flex: 1; }
+.go { align-self: flex-start; background: var(--teal); color: #fff; border-radius: 9px; padding: 9px 16px; font-weight: 600; }
+.book:hover .go { background: var(--teal-dark); }
 footer { background: var(--navy); color: #E4E9FA; padding: 24px 0 30px; font-size: .85rem; }
-@media (max-width: 520px) {
-  h1 { font-size: 1.65rem; } .hero h1 { font-size: 2rem; } .card { padding: 16px; } .hero .wrap { padding-top: 32px; padding-bottom: 30px; }
-  .hero .btn { width: 100%; } .score { font-size: 2.2rem; } .hero::before, .hero::after { display: none; }
-}
+@media (max-width: 520px) { .hero h1 { font-size: 1.9rem; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-@media print { header.site, nav.main, .bar, footer, #banner { display: none; } }
 </style>
 </head>
 <body>
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="#/">Keystone Test Prep</a>
-    <nav class="main" aria-label="Main">
-      <a href="#/" data-nav="home">Home</a>
-      <a href="#/exam" data-nav="exam">Practice Exam</a>
-      <a href="#/flashcards" data-nav="flashcards">Flashcards</a>
-      <a href="#/downloads" data-nav="downloads">Printables</a>
-    </nav>
+<header><div class="wrap"><span>Keystone Test Prep</span></div></header>
+<section class="hero"><div class="wrap">
+  <h1>Study Tools for Readers</h1>
+  <p>Choose your book to open its practice exam, flashcards, and printables. No account or sign-up is needed.</p>
+</div></section>
+<main class="wrap">
+  <h2>Choose Your Book</h2>
+  <div class="grid">
+    <a class="book" href="NCE_Exam_Prep_2026-2027/">
+      <h3>NCE Exam Prep 2026–2027</h3>
+      <p>50-question practice exam, 168 flashcards, and printable study tools.</p>
+      <span class="go">Open study tools</span>
+    </a>
   </div>
-</header>
-<div id="banner"></div>
-<main class="wrap" id="app" tabindex="-1"></main>
-<footer>
-  <div class="wrap">
-    <p>Copyright © 2026 by Keystone Test Prep Team. All rights reserved. For personal study use.</p>
-    <p>NCE is a registered trademark of NBCC. These tools are independent and are not affiliated with, endorsed by, or sponsored by NBCC or CCE. All questions are original practice items, not actual NCE items, and the client stories are fictional. Testing policies change, so always confirm rules, fees, and dates in the most recent official materials.</p>
-    <p>This site has no accounts, sign-up forms, or tracking. Your exam and flashcard progress is saved only in this browser.</p>
-  </div>
-</footer>
-<script src="data.js"></script>
-<script>
-(function () {
-  'use strict';
-  // Set this to the Amazon review page once the book is live. Leave empty until then.
-  var REVIEW_URL = '';
-  var EXAM_SECONDS = 66 * 60;
-  var BOOK = 'NCE Exam Prep 2026–2027';
-  var D = window.NCE_DATA;
-  var Q = D.questions;
-  var app = document.getElementById('app');
-  var banner = document.getElementById('banner');
-  var tick = null;
-  var ICON = {
-    exam: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 13l2.2 2.2L15.5 10"/></svg>',
-    cards: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="14" height="13" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v10"/></svg>',
-    print: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/></svg>',
-    doc: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>'
-  };
-  var TONES = ['a-teal', 'a-violet', 'a-coral'];
-
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-  function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
-  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-  function drop(k) { try { localStorage.removeItem(k); } catch (e) {} }
-  function clock(s) {
-    s = Math.max(0, Math.round(s));
-    return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
-  }
-  function show(html, active, top) {
-    clearInterval(tick);
-    banner.innerHTML = top || '';
-    app.innerHTML = html;
-    document.querySelectorAll('[data-nav]').forEach(function (a) {
-      if (a.getAttribute('data-nav') === active) a.setAttribute('aria-current', 'page');
-      else a.removeAttribute('aria-current');
-    });
-  }
-  function on(sel, fn) { app.querySelectorAll(sel).forEach(function (el) { el.addEventListener('click', fn); }); }
-
-  // ---------- home
-  function home() {
-    function tool(tone, icon, name, text, link, label) {
-      return '<div class="card tool ' + tone + '"><div class="icon">' + ICON[icon] + '</div><h2>' + name + '</h2><p>' + text + '</p><a class="btn" href="' + link + '">' + label + '</a></div>';
-    }
-    show(
-      '<div class="grid">' +
-      tool('a-teal', 'exam', 'Practice Exam', '50 new questions in the 2027 three-option format, with an optional 66-minute timer, a score by domain, and a rationale for every answer.', '#/exam', 'Open the exam') +
-      tool('a-violet', 'cards', 'Flashcards', '168 cards on key terms, theorists, and statistics. Sort each card into Not yet, Almost, or Know it as you go.', '#/flashcards', 'Study flashcards') +
-      tool('a-coral', 'print', 'Printables', 'The practice exam, cheat sheets, study planner, and cut-and-fold flashcards as PDF files to print or save.', '#/downloads', 'See printables') +
-      '</div>', 'home',
-      '<section class="hero"><div class="wrap"><p class="eyebrow">NCE Study Tools</p><h1>Practice smarter for the NCE</h1>' +
-      '<p class="lead">Extra practice for readers of <em>' + BOOK + '</em>. Everything here is ready to use, with no account and no sign-up.</p>' +
-      '<div class="row"><a class="btn hot" href="#/exam">Start the practice exam</a><a class="btn ghost" href="#/flashcards">Study flashcards</a></div>' +
-      '<ul class="facts"><li><b>50</b> practice questions</li><li><b>168</b> flashcards</li><li><b>6</b> exam domains</li><li><b>4</b> printables</li></ul></div></section>');
-  }
-
-  // ---------- exam
-  var EK = 'nce-exam-v1';
-  function exam() {
-    var s = load(EK, null);
-    if (!s) return examIntro();
-    if (s.done) return results(s);
-    examRun(s);
-  }
-  function examIntro() {
-    show(
-      '<h1>NCE Practice Exam</h1>' +
-      '<div class="card"><p>This exam has 50 questions across the six 2027 domains. Each question has three options, as on the 2027 NCE. The real exam allows 225 minutes for 170 questions, so 66 minutes matches that pace here.</p>' +
-      '<p>Save this exam until you have finished Practice Exams A and B in the book. It works best as a fresh checkpoint.</p>' +
-      '<label class="check"><input type="checkbox" id="timed" checked><span>Use the 66-minute timer. If you leave, the clock stops and your place is saved in this browser.</span></label>' +
-      '<button class="btn" id="start">Start the exam</button></div>', 'exam');
-    on('#start', function () {
-      var s = { i: 0, a: {}, f: {}, timed: document.getElementById('timed').checked, used: 0, done: false };
-      save(EK, s);
-      examRun(s);
-    });
-  }
-  function examRun(s) {
-    function answered() { return Object.keys(s.a).length; }
-    function draw() {
-      var q = Q[s.i];
-      var opts = q.options.map(function (o, k) {
-        return '<button class="opt" data-o="' + k + '" aria-pressed="' + (s.a[q.n] === k) + '"><b>' + 'ABC'[k] + '.</b><span>' + esc(o) + '</span></button>';
-      }).join('');
-      var grid = Q.map(function (x, k) {
-        var c = (s.a[x.n] !== undefined ? 'done ' : '') + (s.f[x.n] ? 'flag ' : '') + (k === s.i ? 'now' : '');
-        return '<button class="' + c + '" data-g="' + k + '" aria-label="Question ' + x.n + '">' + x.n + '</button>';
-      }).join('');
-      show(
-        '<div class="bar"><div class="row between"><strong>Question ' + q.n + ' of ' + Q.length + '</strong>' +
-        (s.timed ? '<span class="timer" id="timer" role="timer">' + clock(EXAM_SECONDS - s.used) + '</span>' : '<span class="muted small">Untimed</span>') +
-        '</div><div class="progress"><span style="width:' + (answered() / Q.length * 100) + '%"></span></div></div>' +
-        '<div class="card"><p class="stem">' + esc(q.stem) + '</p>' + opts +
-        '<div class="row between" style="margin-top:14px"><div class="row">' +
-        '<button class="btn alt" id="prev"' + (s.i === 0 ? ' disabled' : '') + '>Back</button>' +
-        '<button class="btn" id="next"' + (s.i === Q.length - 1 ? ' disabled' : '') + '>Next</button></div>' +
-        '<button class="btn alt" id="flag" aria-pressed="' + !!s.f[q.n] + '">' + (s.f[q.n] ? 'Unmark question' : 'Mark as a guess') + '</button></div></div>' +
-        '<div class="card"><h3>All questions</h3><div class="qgrid">' + grid + '</div>' +
-        '<p class="legend small muted">' + answered() + ' of ' + Q.length + ' answered. Shaded means answered. A gold line means marked as a guess.</p>' +
-        '<button class="btn" id="finish">Finish and see my score</button></div>', 'exam');
-      function go(i, focusSel) {
-        s.i = i; save(EK, s); draw(); window.scrollTo(0, 0);
-        var el = app.querySelector(focusSel);
-        if (el && !el.disabled) el.focus({ preventScroll: true });
-      }
-      on('.opt', function () {
-        var k = this.getAttribute('data-o');
-        s.a[q.n] = +k; save(EK, s); draw();
-        app.querySelector('[data-o="' + k + '"]').focus({ preventScroll: true });
-      });
-      on('[data-g]', function () { go(+this.getAttribute('data-g'), '.opt'); });
-      on('#prev', function () { go(s.i - 1, '#prev'); });
-      on('#next', function () { go(s.i + 1, '#next'); });
-      on('#flag', function () {
-        if (s.f[q.n]) delete s.f[q.n]; else s.f[q.n] = 1;
-        save(EK, s); draw();
-        app.querySelector('#flag').focus({ preventScroll: true });
-      });
-      on('#finish', function () { confirmFinish(); });
-      if (s.timed) startClock();
-    }
-    function startClock() {
-      var last = Date.now();
-      tick = setInterval(function () {
-        var now = Date.now();
-        s.used += (now - last) / 1000;
-        last = now;
-        save(EK, s);
-        var left = EXAM_SECONDS - s.used;
-        var t = document.getElementById('timer');
-        if (t) { t.textContent = clock(left); t.classList.toggle('low', left <= 300); }
-        if (left <= 0) { finish(true); }
-      }, 1000);
-    }
-    function confirmFinish() {
-      var open = Q.length - answered();
-      show(
-        '<h1>Finish the exam?</h1><div class="card"><p>' +
-        (open ? 'You have <strong>' + open + ' unanswered question' + (open === 1 ? '' : 's') + '</strong>. They will count as incorrect, so it is worth choosing an answer for each one.' : 'You have answered every question.') +
-        '</p><div class="row"><button class="btn" id="yes">See my score</button><button class="btn alt" id="no">Keep working</button></div></div>', 'exam');
-      on('#yes', function () { finish(false); });
-      on('#no', draw);
-      if (s.timed) startClock();
-    }
-    function finish(timeUp) {
-      clearInterval(tick);
-      s.done = true;
-      s.timeUp = !!timeUp;
-      save(EK, s);
-      results(s);
-    }
-    draw();
-  }
-  function reviewBox() {
-    var link = REVIEW_URL
-      ? '<a class="btn alt" href="' + esc(REVIEW_URL) + '" target="_blank" rel="noopener">Write a review on Amazon</a>'
-      : '<p class="small muted" style="margin:0">To leave a review, search for <em>' + BOOK + '</em> on Amazon.</p>';
-    return '<div class="card reviewbox"><h3>Has the book helped you?</h3><p>If you have a moment, an honest review on Amazon helps other counseling graduates decide whether this book fits how they study. Please share your real opinion, whatever it is. These tools stay open to you either way.</p>' + link + '</div>';
-  }
-  function results(s) {
-    var filter = 'all';
-    function correct(q) { return s.a[q.n] === q.answer; }
-    function draw() {
-      var right = Q.filter(correct).length;
-      var pct = Math.round(right / Q.length * 100);
-      var rows = Object.keys(D.domains).map(function (d) {
-        var qs = Q.filter(function (q) { return q.domain === +d; });
-        var r = qs.filter(correct).length;
-        var p = Math.round(r / qs.length * 100);
-        return '<tr><td>' + esc(d + '. ' + D.domains[d]) + '<div class="mini"><span class="' + (p >= 80 ? 'hi' : p >= 60 ? 'mid' : 'lo') + '" style="width:' + p + '%"></span></div></td><td class="num">' + r + ' / ' + qs.length + '</td><td class="num">' + p + '%</td></tr>';
-      }).join('');
-      var list = Q.filter(function (q) {
-        if (filter === 'missed') return !correct(q);
-        if (filter === 'marked') return s.f[q.n];
-        return true;
-      });
-      var items = list.map(function (q) {
-        var picked = s.a[q.n];
-        var opts = q.options.map(function (o, k) {
-          var c = k === q.answer ? 'correct' : (k === picked ? 'picked' : '');
-          var tags = (k === q.answer ? '<span class="tag good">Correct</span>' : '') + (k === picked && k !== q.answer ? '<span class="tag bad">Your answer</span>' : '') + (k === picked && k === q.answer ? '<span class="tag good">Your answer</span>' : '');
-          return '<div class="ro ' + c + '"><b>' + 'ABC'[k] + '.</b> ' + esc(o) + ' ' + tags + '</div>';
-        }).join('');
-        return '<div class="card rev ' + (correct(q) ? 'right' : 'wrong') + '"><p class="small muted">Question ' + q.n + ' · Domain ' + q.domain + (s.f[q.n] ? ' <span class="tag warn">Marked as a guess</span>' : '') + (picked === undefined ? ' <span class="tag bad">Not answered</span>' : '') + '</p><p>' + esc(q.stem) + '</p>' + opts + '<p style="margin:10px 0 0"><strong>Why:</strong> ' + esc(q.rationale) + '</p></div>';
-      }).join('') || '<div class="card"><p style="margin:0">No questions to show here.</p></div>';
-      function seg(k, label) { return '<button data-f="' + k + '" aria-pressed="' + (filter === k) + '">' + label + '</button>'; }
-      show(
-        '<h1>Your Results</h1>' +
-        (s.timeUp ? '<p class="muted">Time ran out, so your exam was scored with the answers you had chosen.</p>' : '') +
-        '<div class="card scorecard"><div class="ring" style="--p:' + pct + '"><span>' + pct + '%</span></div><div class="scoretext"><p class="score">' + right + ' / ' + Q.length + '</p><p class="muted">' + pct + '% correct' + (s.timed ? ' · Time used ' + clock(Math.min(s.used, EXAM_SECONDS)) : '') + '</p>' +
-        '<p class="small muted">A practice percentage is not a scaled score, and no practice exam can predict your official result. Use this to compare your domains and track your progress.</p></div></div>' +
-        '<div class="card"><h2>Score by Domain</h2><table class="dom"><thead><tr><th>Domain</th><th class="num">Correct</th><th class="num">Percent</th></tr></thead><tbody>' + rows + '</tbody></table>' +
-        '<p class="small muted" style="margin:12px 0 0">Return to the matching chapters for your two lowest domains. Add every miss and every correct guess to your weak-spot tracker.</p></div>' +
-        reviewBox() +
-        '<h2>Answers and Rationales</h2><div class="seg">' + seg('all', 'All') + seg('missed', 'Missed') + seg('marked', 'Marked as a guess') + '</div>' + items +
-        '<button class="btn alt" id="again">Clear my answers and start over</button>', 'exam');
-      on('[data-f]', function () { filter = this.getAttribute('data-f'); draw(); });
-      on('#again', function () { drop(EK); examIntro(); window.scrollTo(0, 0); });
-    }
-    draw();
-  }
-
-  // ---------- flashcards
-  var FK = 'nce-cards-v1';
-  var LABELS = ['Not yet', 'Almost', 'Know it'];
-  function flashcards() {
-    var marks = load(FK, {});
-    function id(d, i) { return d + ':' + i; }
-    function count(d, v) {
-      return D.decks[d].cards.filter(function (c, i) { return marks[id(d, i)] === v; }).length;
-    }
-    function pick() {
-      var rows = D.decks.map(function (dk, d) {
-        return '<div class="card deck ' + TONES[d % 3] + '"><div class="row between"><div><h2 style="margin-bottom:4px">' + esc(dk.name) + '</h2>' +
-          '<div class="stats" style="margin:0"><span>' + dk.cards.length + ' cards</span><span>Know it: ' + count(d, 2) + '</span><span>Almost: ' + count(d, 1) + '</span><span>Not yet: ' + count(d, 0) + '</span></div></div>' +
-          '<button class="btn" data-d="' + d + '">Study</button></div><div class="deckbar"><span style="width:' + (count(d, 2) / dk.cards.length * 100) + '%"></span></div></div>';
-      }).join('');
-      show('<h1>Flashcards</h1><p class="muted">Answer out loud before you flip. A vague "I sort of know this" counts as Not yet.</p>' + rows, 'flashcards');
-      on('[data-d]', function () { study(+this.getAttribute('data-d')); });
-    }
-    function study(d) {
-      var mode = 'all';
-      var order = [], pos = 0, flipped = false;
-      function build(shuffle) {
-        order = D.decks[d].cards.map(function (c, i) { return i; }).filter(function (i) {
-          return mode === 'all' || marks[id(d, i)] !== 2;
-        });
-        if (shuffle) {
-          for (var i = order.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var t = order[i]; order[i] = order[j]; order[j] = t;
-          }
-        }
-        pos = 0; flipped = false;
-      }
-      function draw() {
-        var dk = D.decks[d];
-        var head = '<div class="row between"><h1 style="margin:0">' + esc(dk.name) + '</h1><button class="btn alt" id="back">All decks</button></div>' +
-          '<div class="seg" style="margin-top:12px"><button data-m="all" aria-pressed="' + (mode === 'all') + '">All cards</button><button data-m="left" aria-pressed="' + (mode === 'left') + '">Skip Know it</button><button id="shuffle">Shuffle</button></div>';
-        var body;
-        if (!order.length) {
-          body = '<div class="card"><p>You have marked every card in this deck as Know it. Well done.</p><button class="btn alt" id="reset">Clear this deck</button></div>';
-        } else if (pos >= order.length) {
-          body = '<div class="card"><h2>End of the deck</h2><p>Know it: ' + count(d, 2) + ' · Almost: ' + count(d, 1) + ' · Not yet: ' + count(d, 0) + '</p><div class="row"><button class="btn" id="restart">Go again</button><button class="btn alt" id="reset">Clear this deck</button></div></div>';
-        } else {
-          var c = dk.cards[order[pos]];
-          body = '<p class="small muted">Card ' + (pos + 1) + ' of ' + order.length + '</p>' +
-            '<button class="flash ' + (flipped ? '' : 'front') + '" id="flip" aria-label="' + (flipped ? 'Answer shown. Show the prompt' : 'Prompt shown. Show the answer') + '"><span class="' + (flipped ? '' : 'big') + '">' + esc(flipped ? c.back : c.front) + '</span><span class="hint">' + (flipped ? 'Tap to see the prompt' : 'Tap to see the answer') + '</span></button>' +
-            (flipped ? '<div class="rate">' + LABELS.map(function (l, v) { return '<button class="r' + v + '" data-r="' + v + '">' + l + '</button>'; }).join('') + '</div>' : '') +
-            '<div class="stats"><span>Know it: ' + count(d, 2) + '</span><span>Almost: ' + count(d, 1) + '</span><span>Not yet: ' + count(d, 0) + '</span></div>';
-        }
-        show(head + body, 'flashcards');
-        on('#back', function () { pick(); window.scrollTo(0, 0); });
-        on('[data-m]', function () { mode = this.getAttribute('data-m'); build(false); draw(); });
-        on('#shuffle', function () { build(true); draw(); });
-        on('#flip', function () { flipped = !flipped; draw(); app.querySelector('#flip').focus({ preventScroll: true }); });
-        on('[data-r]', function () {
-          marks[id(d, order[pos])] = +this.getAttribute('data-r');
-          save(FK, marks);
-          pos++; flipped = false; draw();
-        });
-        on('#restart', function () { build(false); draw(); });
-        on('#reset', function () {
-          dk.cards.forEach(function (c, i) { delete marks[id(d, i)]; });
-          save(FK, marks); build(false); draw();
-        });
-      }
-      build(false);
-      draw();
-      window.scrollTo(0, 0);
-    }
-    pick();
-  }
-
-  // ---------- printables
-  function downloads() {
-    var items = [
-      ['Mini Practice Exam', 'The same 50 questions as the online exam, with full rationales, for working on paper.', 'NCE_Bonus_1_Mini_Practice_Exam.pdf'],
-      ['Rapid Review Cheat Sheets', 'The 2027 exam at a glance, numbers to know, ethics and law, DSM-5-TR comparisons, statistics, and theorists.', 'NCE_Bonus_2_Rapid_Review_Cheat_Sheets.pdf'],
-      ['Study Planner and Test-Day Kit', 'The 12-, 8-, and 4-week schedules, weak-spot tracker pages, weekly planners, a seven-day countdown, and test-day checklists.', 'NCE_Bonus_3_Printable_Study_Planner.pdf'],
-      ['168 Printable Flashcards', 'Cut-and-fold cards for key terms, theorists, and statistics.', 'NCE_Bonus_4_Printable_Flashcards.pdf']
-    ];
-    show('<h1>Printables</h1><p class="muted">PDF files to print or save for your personal study.</p>' + items.map(function (x, k) {
-      return '<div class="card dl ' + ['a-teal', 'a-coral', 'a-violet', 'a-teal'][k] + '"><div class="icon">' + ICON[k === 3 ? 'cards' : 'doc'] + '</div><div><h2 style="margin-bottom:4px">' + esc(x[0]) + '</h2><p class="muted" style="margin:0">' + esc(x[1]) + '</p></div><a class="btn" href="files/' + x[2] + '" download>Download PDF</a></div>';
-    }).join(''), 'downloads');
-  }
-
-  // ---------- routing
-  function route() {
-    var r = location.hash.replace(/^#\/?/, '');
-    if (r === 'exam') exam();
-    else if (r === 'flashcards') flashcards();
-    else if (r === 'downloads') downloads();
-    else home();
-    window.scrollTo(0, 0);
-  }
-  window.addEventListener('hashchange', route);
-  route();
-})();
-</script>
+</main>
+<footer><div class="wrap">
+  <p>Copyright © 2026 by Keystone Test Prep Team. All rights reserved. For personal study use.</p>
+  <p style="margin:0">NCE is a registered trademark of NBCC. These tools are independent and are not affiliated with, endorsed by, or sponsored by NBCC or CCE.</p>
+</div></footer>
 </body>
 </html>
