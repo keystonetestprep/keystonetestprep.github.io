@@ -27,7 +27,7 @@
 <script>
   // Paste the paperback's Amazon review link between the quotes once the book is live
   // (same link as REVIEW_URL in index.html). Leave empty until then: readers get an Amazon search for the book.
-  var REVIEW_URL = '';
+  var REVIEW_URL = 'https://www.amazon.com/review/create-review?asin=B0HSRF21P1';
   var FALLBACK = 'https://www.amazon.com/s?k=' + encodeURIComponent('LSAT Study Guide Keystone Test Prep');
   var target = REVIEW_URL || FALLBACK;
   document.getElementById('go').href = target;
